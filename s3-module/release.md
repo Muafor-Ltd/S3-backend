@@ -56,6 +56,7 @@ Or use conditions like:
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
 6. After the code is pushed to the repo, trigger this workflow manually to publish and create a release version.
 
+
 - name: Create a release
   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
   run: npx semantic-release
