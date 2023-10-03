@@ -12,9 +12,11 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: release install
-        run: npm install --save-dev semantic-release #This line is only needed for windows pcs.
-      - name: release
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+      - name: Install semantic-release
+        run: npm install --save-dev semantic-release
+      - name: Run semantic-release
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
