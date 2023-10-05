@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Set up Node.js
+      - name: Setup_node-js
         uses: actions/setup-node@v2
       - name: Install semantic-release
         run: npm install --save-dev semantic-release
